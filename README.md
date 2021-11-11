@@ -1,10 +1,10 @@
 # CS394
 
 
-Catering       --> Bora
-Renovation     --> İrem
-Private Lesson --> Umut
+Catering       --> Bora  
+Renovation     --> İrem  
+Private Lesson --> Umut  
 
-Constraint Layout (Recyler view)
-Data Binding
+Constraint Layout (Recyler view)  
+Data Binding  
 
