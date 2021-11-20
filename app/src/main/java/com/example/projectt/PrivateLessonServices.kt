@@ -49,11 +49,11 @@ class LessonAdapter(private val data: ArrayList<PrivateLesson>): RecyclerView.Ad
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
-        viewHolder.view.findViewById<TextView>(R.id.name).text = data[position].name
-        viewHolder.view.findViewById<TextView>(R.id.city).text = data[position].city
-        viewHolder.view.findViewById<TextView>(R.id.rating).text = data[position].rating.toString()
-        viewHolder.view.findViewById<TextView>(R.id.price).text = data[position].price.toString() + "TL/h"
-        viewHolder.view.findViewById<ImageView>(R.id.profile_avatar).setImageResource(data[position].photo)
+        viewHolder.view.findViewById<TextView>(R.id.private_lesson_name).text = data[position].name
+        viewHolder.view.findViewById<TextView>(R.id.private_lesson_city).text = data[position].city
+        viewHolder.view.findViewById<TextView>(R.id.private_lesson_rating).text = data[position].rating.toString()
+        viewHolder.view.findViewById<TextView>(R.id.private_lesson_price).text = data[position].price.toString() + "TL/h"
+        viewHolder.view.findViewById<ImageView>(R.id.private_lesson_profile_avatar).setImageResource(data[position].photo)
 
 
     }

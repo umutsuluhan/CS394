@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_appOpeningFragment_to_privateLessonFragment2"
             app:destination="@id/privateLessonFragment" />
+        <action
+            android:id="@+id/action_appOpeningFragment_to_RenovationFragment"
+            app:destination="@id/RenovationFragment" />
     </fragment>
 
 
@@ -21,5 +24,11 @@
         android:name="com.example.projectt.PrivateLessonServices"
         android:label="private_lesson_services"
         tools:layout="@layout/private_lesson_services" />
+
+    <fragment
+        android:id="@+id/RenovationFragment"
+        android:name="com.example.projectt.RenovationServices"
+        android:label="renovation_services"
+        tools:layout="@layout/renovation_services" />
 
 </navigation>

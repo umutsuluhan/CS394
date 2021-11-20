@@ -21,8 +21,9 @@ class AppOpeningFragment: Fragment() {
             Navigation.findNavController(view).navigate(R.id.action_appOpeningFragment_to_privateLessonFragment2)
         }
 
-
-
+        view.findViewById<Button>(R.id.renovation_button).setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_appOpeningFragment_to_RenovationFragment)
+        }
         return view
     }
 
