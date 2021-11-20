@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/appOpeningFragment">
+
+    <fragment
+        android:id="@+id/appOpeningFragment"
+        android:name="com.example.projectt.AppOpeningFragment"
+        android:label="fragment_app_opening"
+        tools:layout="@layout/fragment_app_opening" >
+        <action
+            android:id="@+id/action_appOpeningFragment_to_privateLessonFragment2"
+            app:destination="@id/privateLessonFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/privateLessonFragment"
+        android:name="com.example.projectt.PrivateLessonServices"
+        android:label="private_lesson_services"
+        tools:layout="@layout/private_lesson_services" />
+
+</navigation>

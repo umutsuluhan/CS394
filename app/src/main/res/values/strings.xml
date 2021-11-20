@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">App Name</string>
+    <string name="catering">Catering Services</string>
+    <string name="renovation">Renovation Services</string>
+    <string name="private_lesson">Private Lesson Services</string>
+    <string name="text">Text</string>
+    <string name="profile_avatar_of_teachers">Profile avatar of teachers</string>
+</resources>
