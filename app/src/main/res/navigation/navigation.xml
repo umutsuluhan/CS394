@@ -14,8 +14,11 @@
             android:id="@+id/action_appOpeningFragment_to_privateLessonFragment2"
             app:destination="@id/privateLessonFragment" />
         <action
-            android:id="@+id/action_appOpeningFragment_to_RenovationFragment"
-            app:destination="@id/RenovationFragment" />
+            android:id="@+id/action_appOpeningFragment_to_cateringFragment2"
+            app:destination="@id/cateringFragment" />
+        <action
+            android:id="@+id/action_appOpeningFragment_to_renovationFragment"
+            app:destination="@id/renovationFragment" />
     </fragment>
 
 
@@ -26,9 +29,16 @@
         tools:layout="@layout/private_lesson_services" />
 
     <fragment
-        android:id="@+id/RenovationFragment"
+        android:id="@+id/cateringFragment"
+        android:name="com.example.projectt.CateringServices"
+        android:label="catering_services"
+        tools:layout="@layout/catering_services" />
+
+    <fragment
+        android:id="@+id/renovationFragment"
         android:name="com.example.projectt.RenovationServices"
         android:label="renovation_services"
         tools:layout="@layout/renovation_services" />
+
 
 </navigation>

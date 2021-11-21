@@ -20,10 +20,15 @@ class AppOpeningFragment: Fragment() {
         view.findViewById<Button>(R.id.private_lesson_button).setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_appOpeningFragment_to_privateLessonFragment2)
         }
-
         view.findViewById<Button>(R.id.renovation_button).setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_appOpeningFragment_to_RenovationFragment)
+            Navigation.findNavController(view).navigate(R.id.action_appOpeningFragment_to_renovationFragment)
         }
+        view.findViewById<Button>(R.id.catering_button).setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_appOpeningFragment_to_cateringFragment2)
+        }
+
+
+
         return view
     }
 

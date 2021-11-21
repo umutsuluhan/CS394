@@ -7,7 +7,7 @@
 
 
     <TextView
-        android:id="@+id/private_lesson_rating"
+        android:id="@+id/rating"
         android:layout_width="113dp"
         android:layout_height="35dp"
         android:layout_marginStart="16dp"
@@ -25,7 +25,7 @@
         app:layout_constraintVertical_bias="0.876" />
 
     <TextView
-        android:id="@+id/private_lesson_price"
+        android:id="@+id/price"
         android:layout_width="113dp"
         android:layout_height="35dp"
         android:layout_marginStart="16dp"
@@ -43,7 +43,7 @@
         app:layout_constraintVertical_bias="0.876" />
 
     <TextView
-        android:id="@+id/private_lesson_city"
+        android:id="@+id/city"
         android:layout_width="113dp"
         android:layout_height="35dp"
         android:layout_marginStart="16dp"
@@ -61,7 +61,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/private_lesson_name"
+        android:id="@+id/name"
         android:layout_width="113dp"
         android:layout_height="35dp"
         android:layout_marginStart="16dp"
@@ -79,7 +79,7 @@
         app:layout_constraintVertical_bias="0.183" />
 
     <ImageView
-        android:id="@+id/private_lesson_profile_avatar"
+        android:id="@+id/profile_avatar"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="4dp"
