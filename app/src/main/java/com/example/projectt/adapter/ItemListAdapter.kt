@@ -16,9 +16,6 @@ class ItemListAdapter(
         private val LIST_ITEM_KEY = "LIST_ITEM"
         val textView: TextView = view.findViewById(R.id.list_item_title)
         val addressTextView: TextView = view.findViewById(R.id.list_item_address_title)
-        //val binding: ActivityFillOrderDetailsBinding = DataBindingUtil.setContentView(this,R.layout.activity_fill_order_details)
-        //val selectedListItem = intent.getSerializableExtra(LIST_ITEM_KEY) as ListItem
-        //binding. listItem =selectedListItem
         lateinit var listItem:ListItem
 
         fun bindListItem(listItem:ListItem){

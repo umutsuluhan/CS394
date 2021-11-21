@@ -6,15 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projectt.databinding.RenovationServicesBinding
+import com.example.projectt.model.ItemCount
 
 class RenovationServices: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        val view = inflater.inflate(R.layout.renovation_services, container, false)
+        val binding = DataBindingUtil.inflate<RenovationServicesBinding>(inflater, R.layout.renovation_services, container,false)
 
         val renovation1 = Renovation("Egemen Renovation", "İstanbul", "08501235252", 4.8 , 15000, photo = R.drawable.renovation1)
         val renovation2 = Renovation("Borusan Renovation", "İstanbul", "08504122133",4.6 , 12000, photo = R.drawable.renovation2)
@@ -25,15 +28,17 @@ class RenovationServices: Fragment() {
 
 
         val list = arrayListOf<Renovation>(renovation1, renovation2, renovation3,renovation4,renovation5,renovation6)
-
         val viewAdapter = RenovationAdapter(list)
+        binding.renovationList.setHasFixedSize(true)
+        binding.renovationList.adapter = viewAdapter
 
-        view.findViewById<RecyclerView>(R.id.renovation_list).run {
-            setHasFixedSize(true)
-            adapter = viewAdapter
-        }
 
-        return view;
+
+        val dataBinding = ItemCount("Available Renovation Companies",list.size)
+        binding.countItem = dataBinding
+
+
+        return binding.root;
     }
 }
 

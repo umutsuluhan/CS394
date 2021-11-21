@@ -11,21 +11,23 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectt.adapter.ItemListAdapter
 import com.example.projectt.data.Datasource
+import com.example.projectt.databinding.CateringServicesBinding
+import com.example.projectt.model.ItemCount
 
 class CateringServices : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        val view = inflater.inflate(R.layout.catering_services, container, false)
+        val binding = DataBindingUtil.inflate<CateringServicesBinding>(inflater, R.layout.catering_services, container,false)
 
         val myDataset = Datasource().loadListItems()
-        val rv = view.findViewById<RecyclerView>(R.id.rv)
-        rv.layoutManager = LinearLayoutManager(view.context)
+        val rv = binding.rv
         rv.adapter = ItemListAdapter(myDataset)
         rv.setHasFixedSize(true)
-
-        return view;
+        val dataBinding = ItemCount("Available Catering Companies",myDataset.size)
+        binding.countItem = dataBinding
+        return binding.root;
 
     }
 }

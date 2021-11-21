@@ -6,15 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projectt.databinding.PrivateLessonServicesBinding
+import com.example.projectt.model.ItemCount
 
 class PrivateLessonServices : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        val view = inflater.inflate(R.layout.private_lesson_services, container, false)
+        val binding = DataBindingUtil.inflate<PrivateLessonServicesBinding>(inflater, R.layout.private_lesson_services, container,false)
 
         val lesson1 = PrivateLesson("Umut", "İstanbul", "05442225353", 150, 4.8, photo = R.drawable.avatar1)
         val lesson2 = PrivateLesson("İrem", "İstanbul", "05443215423", 170, 4.6, photo = R.drawable.avatar2)
@@ -25,12 +28,13 @@ class PrivateLessonServices : Fragment() {
         val list = arrayListOf<PrivateLesson>(lesson1, lesson2, lesson3, lesson4, lesson5)
         val viewAdapter = LessonAdapter(list)
 
-        view.findViewById<RecyclerView>(R.id.private_lesson_list).run {
-            setHasFixedSize(true)
-            adapter = viewAdapter
-        }
+        binding.privateLessonList.setHasFixedSize(true)
+        binding.privateLessonList.adapter = viewAdapter
 
-        return view;
+
+        val dataBinding = ItemCount("Number of Available Lessons",list.size)
+        binding.countItem = dataBinding
+        return binding.root;
 
     }
 }

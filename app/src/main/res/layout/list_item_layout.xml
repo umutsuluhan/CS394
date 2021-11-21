@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:text="TextView"
+        android:text="@{listItem.component1()}"
         app:layout_constraintBottom_toBottomOf="@+id/list_item_address_title"
         app:layout_constraintEnd_toStartOf="@+id/list_item_address_title"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
-        android:text="TextView"
+        android:text="@{listItem.component3()}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
