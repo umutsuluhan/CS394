@@ -17,7 +17,7 @@ class AppOpeningFragment: Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_app_opening, container, false)
 
-        view.findViewById<Button>(R.id.private_lesson_button).setOnClickListener {
+        /*view.findViewById<Button>(R.id.private_lesson_button).setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_appOpeningFragment_to_privateLessonFragment2)
         }
         view.findViewById<Button>(R.id.renovation_button).setOnClickListener {
@@ -25,7 +25,7 @@ class AppOpeningFragment: Fragment() {
         }
         view.findViewById<Button>(R.id.catering_button).setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_appOpeningFragment_to_cateringFragment2)
-        }
+        }*/
 
 
 

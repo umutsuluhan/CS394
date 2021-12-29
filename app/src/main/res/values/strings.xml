@@ -73,4 +73,11 @@
     <string name="number_of_meals">Number of meals</string>
     <string name="daily_service_price">Daily Service Price</string>
     <string name="name">Name</string>
+    <string name="login">Login</string>
+    <string name="elma">ELMA</string>
+    <string name="mail">Mail</string>
+    <string name="password">Password</string>
+    <string name="xxx_gmail_com">xxx@gmail.com</string>
+    <string name="enter_your_mail_address_here">Enter your mail address here</string>
+    <string name="enter_your_password_here">Enter your password here</string>
 </resources>
