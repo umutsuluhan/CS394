@@ -80,4 +80,5 @@
     <string name="xxx_gmail_com">xxx@gmail.com</string>
     <string name="enter_your_mail_address_here">Enter your mail address here</string>
     <string name="enter_your_password_here">Enter your password here</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

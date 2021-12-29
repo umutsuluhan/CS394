@@ -34,9 +34,6 @@ class LoginActivity : AppCompatActivity(){
 
         val login_button = findViewById<Button>(R.id.login_button)
         login_button.setOnClickListener {
-
-
-
             val email_text = findViewById<EditText>(R.id.email_edit_text)
             email = email_text.text.toString()
             val password_text = findViewById<EditText>(R.id.password_edit_text)
@@ -61,6 +58,35 @@ class LoginActivity : AppCompatActivity(){
                         Toast.makeText(baseContext, "Access denied.",
                             Toast.LENGTH_SHORT).show()
                         onStart()
+                    }
+                }
+        }
+
+        val sign_up_button = findViewById<Button>(R.id.singup_button)
+        sign_up_button.setOnClickListener {
+            val email_text = findViewById<EditText>(R.id.email_edit_text)
+            email = email_text.text.toString()
+            val password_text = findViewById<EditText>(R.id.password_edit_text)
+            password = password_text.text.toString()
+
+            if(!isValidEmail(email)){
+                Toast.makeText(baseContext, "Please enter valid email",
+                    Toast.LENGTH_SHORT).show()
+                onStart()
+            }
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d(TAG, "createUserWithEmail:success")
+                        Toast.makeText(baseContext, "You are successfully signed-up.",
+                            Toast.LENGTH_SHORT).show()
+                        val user = auth.currentUser
+                    } else {
+                        Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                        Toast.makeText(baseContext, "User sign-up is failed.",
+                            Toast.LENGTH_SHORT).show()
                     }
                 }
         }
