@@ -13,6 +13,10 @@ import com.google.firebase.ktx.Firebase
 import android.text.TextUtils
 import android.util.Patterns
 import androidx.appcompat.app.AlertDialog
+import android.content.Intent
+
+
+
 
 
 class LoginActivity : AppCompatActivity(){
@@ -51,8 +55,8 @@ class LoginActivity : AppCompatActivity(){
                         Log.d(TAG, "signInWithEmail:success")
                         Toast.makeText(baseContext, "Access granted",
                             Toast.LENGTH_SHORT).show()
-                        val user = auth.currentUser
-                        navigateToMainPage(user)
+                        val switchActivityIntent = Intent(this, MainPageActivity::class.java)
+                        startActivity(switchActivityIntent)
                     }else{
                         Log.w(TAG, "signInWithEmail:failure", task.exception)
                         Toast.makeText(baseContext, "Access denied.",

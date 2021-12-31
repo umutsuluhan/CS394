@@ -1,4 +1,4 @@
-package com.example.projectt.data
+package com.example.projectt.database
 
 import com.example.projectt.model.ListItem
 import com.example.projectt.R

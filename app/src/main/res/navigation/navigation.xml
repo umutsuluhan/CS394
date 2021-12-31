@@ -11,6 +11,10 @@
         android:label="login_activity"
         tools:layout="@layout/login_page" >
     </activity>
+    <activity
+        android:id="@+id/mainPageActivity"
+        android:name="com.example.projectt.MainPageActivity"
+        android:label="MainPageActivity" />
 
 
 </navigation>
