@@ -8,8 +8,6 @@ import retrofit2.http.GET
 
 interface ApiInterfaceCatering {
 
-    // https://jsonkeeper.com/b/7DMM  CATERING
-
     @GET("7DMM")
     fun getCaterings() : Call<JsonArray>
 

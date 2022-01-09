@@ -1,11 +1,13 @@
 package com.example.projectt
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.graphics.Movie
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.NavHostFragment.findNavController
@@ -35,5 +37,7 @@ class MainActivity : AppCompatActivity() {
            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
     }
+
+
 
 }

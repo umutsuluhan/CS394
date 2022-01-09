@@ -1,17 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_here"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        card_view:cardCornerRadius="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="navigateCatering"
+        tools:ignore="UsingOnClickInXml">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/catering_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/app_name"
+                android:padding="5dp"
+                android:src="@drawable/catering1"/>
+
+            <TextView
+                android:id="@+id/catering_services_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/catering"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="@id/cardview1"
+        app:layout_constraintStart_toStartOf="@id/cardview1"
+        card_view:cardCornerRadius="20dp"
+        android:onClick="navigatePrivateLesson"
+        tools:ignore="UsingOnClickInXml">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/private_lesson_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/app_name"
+                android:padding="5dp"
+                android:src="@drawable/privatelesson"/>
+
+            <TextView
+                android:id="@+id/private_lesson_services_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/private_lesson"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="@id/cardview1"
+        app:layout_constraintStart_toStartOf="@id/cardview1"
+        card_view:cardCornerRadius="20dp"
+        android:onClick="navigateRenovation"
+        tools:ignore="UsingOnClickInXml">
+
+
+    <!--        android:onClick="renovation_enter"-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/renovation_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/app_name"
+                android:padding="5dp"
+                android:src="@drawable/renovation"/>
+
+            <TextView
+                android:id="@+id/renovation_services_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/renovation"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
+

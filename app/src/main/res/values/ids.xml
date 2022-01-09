@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="action_AppOpeningFragment_to_PrivateLessonServicesFragment" type="id" />
+    <item name="cardview1" type="id" />
+    <item name="catering_image" type="id" />
+    <item name="catering_services_text" type="id" />
+    <item name="private_lesson_image" type="id" />
+    <item name="private_lesson_services_text" type="id" />
+    <item name="CateringFragment" type="id" />
+
 </resources>
