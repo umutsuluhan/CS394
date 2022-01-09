@@ -12,6 +12,9 @@ import com.google.firebase.ktx.Firebase
 import android.text.TextUtils
 import android.util.Patterns
 import android.content.Intent
+import com.example.projectt.api.ApiInterfaceCatering
+import com.example.projectt.api.ApiInterfacePrivateLesson
+import com.example.projectt.api.ApiInterfaceRenovation
 import com.example.projectt.database.*
 import com.google.common.reflect.TypeToken
 import com.google.gson.Gson
