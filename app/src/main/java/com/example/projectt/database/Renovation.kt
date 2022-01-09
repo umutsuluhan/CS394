@@ -5,10 +5,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "renovation")
 data class Renovation (
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey var renovation_id: Int,
     var name: String,
-    var city: String,
-    var phoneNumber: String,
-    var rating: Double,
     var price: Int,
-    var photo: Int)
+    var address: String,
+    var phoneNumber: String,
+    var rating: Double)

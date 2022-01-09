@@ -23,5 +23,5 @@ interface CateringDao {
     fun getAll(): List<Catering>
 
     @Query("SELECT * FROM catering")
-    fun getAllPlants(): List<Catering>
+    fun getAllCaterings(): List<Catering>
 }

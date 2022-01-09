@@ -11,7 +11,7 @@ interface PrivateLessonDao {
     suspend fun insert(privateLesson: PrivateLesson)
 
     @Insert
-    fun insertAll(privateLessons: List<PrivateLesson>)
+    fun insertAll(privateLesson: List<PrivateLesson>)
 
     @Update
     suspend  fun update(privateLesson: PrivateLesson)
