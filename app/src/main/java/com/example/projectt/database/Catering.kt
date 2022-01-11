@@ -2,6 +2,7 @@ package com.example.projectt.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity(tableName = "catering")
 data class Catering (
@@ -11,4 +12,4 @@ data class Catering (
     var address: String,
     var phoneNumber: String,
     var rating: Double
-)
+): Serializable

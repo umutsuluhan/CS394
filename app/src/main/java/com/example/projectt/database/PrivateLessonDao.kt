@@ -23,5 +23,5 @@ interface PrivateLessonDao {
     fun getAll(): List<PrivateLesson>
 
     @Query("SELECT * FROM private_lesson")
-    fun getAllPlants(): List<PrivateLesson>
+    fun getAllPrivateLessons(): List<PrivateLesson>
 }

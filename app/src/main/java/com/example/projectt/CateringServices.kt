@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import com.example.projectt.adapter.ItemListAdapter
+import com.example.projectt.adapter.PrivateLessonAdapter
 import com.example.projectt.database.Datasource
 import com.example.projectt.databinding.CateringServicesBinding
 import com.example.projectt.model.ItemCount
@@ -20,8 +20,8 @@ class CateringServices : Fragment() {
 
         val myDataset = Datasource().loadListItems()
         val rv = binding.rv
-        rv.adapter = ItemListAdapter(myDataset)
-        rv.setHasFixedSize(true)
+       // rv.adapter = ItemListAdapter(myDataset)
+       // rv.setHasFixedSize(true)
         val dataBinding = ItemCount("Available Catering Companies",myDataset.size)
         binding.countItem = dataBinding
         return binding.root;

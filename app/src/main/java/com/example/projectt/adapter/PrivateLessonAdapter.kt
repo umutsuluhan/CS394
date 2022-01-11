@@ -11,13 +11,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectt.database.PrivateLesson
 
-class PrivateLessonAdapter : RecyclerView.Adapter<PrivateLessonAdapter.ViewHolder>() {
+class PrivateLessonAdapter (val data: MutableList<PrivateLesson>): RecyclerView.Adapter<PrivateLessonAdapter.ViewHolder>() {
 
-    var data =  listOf<PrivateLesson>()
+    /*var data =  listOf<PrivateLesson>()
         set(value) {
             field = value
             notifyDataSetChanged()
-        }
+        }*/
 
     override fun getItemCount() = data.size
 
@@ -29,6 +29,11 @@ class PrivateLessonAdapter : RecyclerView.Adapter<PrivateLessonAdapter.ViewHolde
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.from(parent)
+    }
+
+    fun changeData(privateLessons: List<PrivateLesson>){
+        data.clear()
+        data.addAll(privateLessons)
     }
 
     class ViewHolder private constructor(itemView: View) : RecyclerView.ViewHolder(itemView){

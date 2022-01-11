@@ -6,6 +6,9 @@
         <variable
             name="countItem"
             type ="com.example.projectt.model.ItemCount" />
+        <variable
+            name="PrivateLessonViewModel"
+            type="com.example.projectt.viewmodel.PrivateLessonViewModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -15,7 +18,6 @@
         android:id="@+id/private_lesson_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-
         android:layout_marginTop="20dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
