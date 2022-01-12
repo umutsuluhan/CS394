@@ -1,105 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <data>
-        <variable
-            name="cateringViewModel"
-            type ="com.example.projectt.viewmodel.CateringViewModel" />
-    </data>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+        <data>
+            <variable
+                name="cateringViewModel"
+                type ="com.example.projectt.viewmodel.CateringViewModel" />
+        </data>
 
-    <TextView
-        android:id="@+id/catering_name"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="@{cateringViewModel.currentCatering.name}"
-        app:layout_constraintBottom_toBottomOf="@+id/catering_address"
-        app:layout_constraintEnd_toStartOf="@+id/catering_address"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/catering_address" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="325dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="visible"
+        app:cardBackgroundColor="#CCCCFF"
+        card_view:cardCornerRadius="20dp">
 
-    <TextView
-        android:id="@+id/catering_address"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="@{cateringViewModel.currentCatering.address}"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/catering_name"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:text="@{cateringViewModel.currentCatering.name}"/>
 
-    <Button
-        android:id="@+id/Catering_next_page_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="Find Random Nearby catering Company"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/catering_rating" />
+            <TextView
+                android:id="@+id/catering_address"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="200dp"
+                android:text="@{cateringViewModel.currentCatering.address}" />
 
-    <TextView
-        android:id="@+id/catering_phone_number_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Phone Number:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/catering_phone_number" />
+        <Button
+            android:id="@+id/Catering_next_page_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:layout_marginStart="35dp"
+            android:text="Find Random Nearby catering Company"/>
 
-    <TextView
-        android:id="@+id/catering_phone_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@{cateringViewModel.currentCatering.phoneNumber}"
-        app:layout_constraintEnd_toEndOf="@+id/catering_address"
-        app:layout_constraintStart_toStartOf="@+id/catering_address"
-        app:layout_constraintTop_toBottomOf="@+id/catering_address" />
+        <TextView
+                android:id="@+id/catering_phone_number_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="100dp"
+            android:text="Phone Number:"/>
 
-    <TextView
-        android:id="@+id/catering_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@{Double.toString(cateringViewModel.currentCatering.price)}"
-        app:layout_constraintEnd_toEndOf="@+id/catering_address"
-        app:layout_constraintStart_toStartOf="@+id/catering_address"
-        app:layout_constraintTop_toBottomOf="@+id/catering_phone_number" />
+            <TextView
+                android:id="@+id/catering_phone_number"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginTop="80dp"
+                android:layout_marginStart="200dp"
+                android:text="@{cateringViewModel.currentCatering.phoneNumber}"/>
 
-    <TextView
-        android:id="@+id/catering_rating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@{Double.toString(cateringViewModel.currentCatering.rating)}"
-        app:layout_constraintEnd_toEndOf="@+id/catering_address"
-        app:layout_constraintStart_toStartOf="@+id/catering_address"
-        app:layout_constraintTop_toBottomOf="@+id/catering_price" />
+            <TextView
+                android:id="@+id/catering_price"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginTop="140dp"
+                android:layout_marginStart="200dp"
+                android:text="@{Double.toString(cateringViewModel.currentCatering.price)}" />
 
-    <TextView
-        android:id="@+id/catering_price_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Price:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/catering_price" />
+            <TextView
+                android:id="@+id/catering_rating"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginTop="200dp"
+                android:layout_marginStart="200dp"
+                android:text="@{Double.toString(cateringViewModel.currentCatering.rating)}"/>
 
-    <TextView
-        android:id="@+id/catering_rating_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Rating:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/catering_rating" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/catering_price_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="160dp"
+                android:text="Price:"/>
+
+            <TextView
+                android:id="@+id/catering_rating_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="220dp"
+                android:text="Rating:" />
+    </androidx.cardview.widget.CardView>
 </layout>

@@ -26,13 +26,6 @@ class CateringViewModel(application: Application) : AndroidViewModel(application
     }
 
     private fun getNextCatering(){
-        /*var allCateringList = listOf(
-                Catering(1, "n1", 1.1,  "A1",  "33", 2.2),
-                Catering(2,"n2",  2.2,  "A2",  "66", 4.4),
-                Catering(3,"n3",3.3,  "A3",  "99", 8.8),
-                Catering(4,"n4", 4.4,  "A4",  "22", 16.16),
-                Catering(5,"n5", 5.5,  "A5",  "55", 32.32)
-            )*/
         val allCateringList = cateringDao.getAll()
         val randomNearbyCatering : Catering = allCateringList.random()
 
@@ -42,10 +35,7 @@ class CateringViewModel(application: Application) : AndroidViewModel(application
 
         usedCateringList.add(currentCatering1)
     }
-    fun reinitializeData() {
-        usedCateringList.clear()
-        getNextCatering()
-    }
+
     fun nextCateringPage(){
         getNextCatering()
     }

@@ -6,9 +6,9 @@
         <variable
             name="countItem"
             type ="com.example.projectt.model.ItemCount" />
-        <variable
+        <!--variable
             name="PrivateLessonViewModel"
-            type="com.example.projectt.viewmodel.PrivateLessonViewModel" />
+            type="com.example.projectt.viewmodel.PrivateLessonViewModel" /-->
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"

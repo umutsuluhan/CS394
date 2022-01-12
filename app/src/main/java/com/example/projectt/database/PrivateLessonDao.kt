@@ -24,4 +24,7 @@ interface PrivateLessonDao {
 
     @Query("SELECT * FROM private_lesson")
     fun getAllPrivateLessons(): List<PrivateLesson>
+
+    @Query("SELECT * FROM private_lesson where private_lesson_id= :id")
+    fun getPrivateLesson(id: Int): List<PrivateLesson>
 }

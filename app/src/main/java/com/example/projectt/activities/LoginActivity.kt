@@ -1,4 +1,4 @@
-package com.example.projectt
+package com.example.projectt.activities
 
 import android.content.ContentValues.TAG
 import android.util.Log
@@ -12,6 +12,7 @@ import com.google.firebase.ktx.Firebase
 import android.text.TextUtils
 import android.util.Patterns
 import android.content.Intent
+import com.example.projectt.R
 import com.example.projectt.api.ApiInterfaceCatering
 import com.example.projectt.api.ApiInterfacePrivateLesson
 import com.example.projectt.api.ApiInterfaceRenovation
@@ -35,6 +36,9 @@ class LoginActivity : AppCompatActivity(){
         supportActionBar?.setDisplayShowHomeEnabled(true);
         supportActionBar?.setLogo(R.drawable.elma);
         supportActionBar?.setDisplayUseLogoEnabled(true);
+
+        val reservationDao = ReservationDatabase.getInstance(application).reservationDao
+        reservationDao.clear()
 
         val apiInterface_catering = ApiInterfaceCatering.create().getCaterings()
 

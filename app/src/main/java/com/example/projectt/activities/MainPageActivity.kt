@@ -1,17 +1,10 @@
-package com.example.projectt
+package com.example.projectt.activities
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.view.View
-import android.widget.TextView
-import android.widget.Toast
-import androidx.cardview.widget.CardView
-import androidx.navigation.NavDeepLinkBuilder
-import androidx.navigation.fragment.NavHostFragment.findNavController
+import com.example.projectt.R
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 
 
 class MainPageActivity : AppCompatActivity() {
@@ -24,10 +17,6 @@ class MainPageActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true);
         supportActionBar?.setLogo(R.drawable.elma);
         supportActionBar?.setDisplayUseLogoEnabled(true);
-
-        val firebaseAuth = FirebaseAuth.getInstance();
-        val user = firebaseAuth.currentUser
-
 
     }
 

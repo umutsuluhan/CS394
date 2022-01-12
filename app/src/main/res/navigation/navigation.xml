@@ -7,13 +7,13 @@
 
     <activity
         android:id="@+id/login_activity"
-        android:name="com.example.projectt.LoginActivity"
+        android:name="com.example.projectt.activities.LoginActivity"
         android:label="login_activity"
         tools:layout="@layout/login_page" >
     </activity>
     <activity
         android:id="@+id/mainPageActivity"
-        android:name="com.example.projectt.MainPageActivity"
+        android:name="com.example.projectt.activities.MainPageActivity"
         android:label="MainPageActivity" />
 
 

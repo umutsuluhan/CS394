@@ -1,185 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="150dp">
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="privateLesson"
+            type ="com.example.projectt.database.PrivateLesson" />
+        <variable
+            name="clickListener"
+            type="com.example.projectt.adapter.PrivateLessonListener" />
 
+    </data>
 
-    <TextView
-        android:id="@+id/lesson_rating"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:text="@string/text"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.846" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="@{() -> clickListener.onClick(privateLesson)}"
+        android:visibility="visible"
+        app:cardBackgroundColor="#CCCCFF"
+        card_view:cardCornerRadius="20dp">
 
-    <TextView
-        android:id="@+id/lesson_price"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:text="@string/text"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.803"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.846" />
+        <TextView
+            android:id="@+id/lesson_name_identifier"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Name" />
 
-    <TextView
-        android:id="@+id/lesson_address"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:text="@string/text"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.803"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/lesson_address_identifier"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Address" />
 
-    <TextView
-        android:id="@+id/lesson_name"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:text="@string/text"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/lesson_rating_identifier"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="110dp"
+            android:gravity="center"
+            android:text="Rating" />
 
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
-    <!--xmlns:tools="http://schemas.android.com/tools"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:orientation="vertical">-->
+        <TextView
+            android:id="@+id/lesson_price_identifier"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="110dp"
+            android:gravity="center"
+            android:text="Price" />
 
+        <TextView
+            android:id="@+id/lesson_name"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="@string/text"
+            app:privateLessonName="@{privateLesson}" />
 
-    <!--<androidx.cardview.widget.CardView-->
-    <!--    android:layout_width="match_parent"-->
-    <!--    android:layout_height="100dp"-->
-    <!--    android:layout_marginStart="8dp"-->
-    <!--    android:layout_marginTop="10dp"-->
-    <!--    android:layout_marginEnd="8dp"-->
-    <!--    app:cardBackgroundColor="@color/purple_200"-->
-    <!--    app:layout_constraintEnd_toEndOf="@id/cardview1"-->
-    <!--    app:layout_constraintStart_toStartOf="@id/cardview1"-->
-    <!--    card_view:cardCornerRadius="20dp"-->
-    <!--    android:onClick="navigateRenovation"-->
-    <!--    tools:ignore="UsingOnClickInXml">-->
+        <TextView
+            android:id="@+id/lesson_rating"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="130dp"
+            android:gravity="center"
+            android:text="@string/text"
+            app:privateLessonRating="@{privateLesson}" />
 
+        <TextView
+            android:id="@+id/lesson_address"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="@string/text"
+            app:privateLessonAddress="@{privateLesson}" />
 
-    <!--    &lt;!&ndash;        android:onClick="renovation_enter"&ndash;&gt;-->
-
-    <!--    <RelativeLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content">-->
-
-    <!--        <TextView-->
-    <!--            android:id="@+id/lesson_rating"-->
-    <!--            android:layout_width="113dp"-->
-    <!--            android:layout_height="35dp"-->
-    <!--            android:layout_marginStart="16dp"-->
-    <!--            android:layout_marginTop="32dp"-->
-    <!--            android:layout_marginEnd="16dp"-->
-    <!--            android:layout_marginBottom="16dp"-->
-    <!--            android:gravity="center"-->
-    <!--            android:text="@string/text"-->
-    <!--            android:textSize="20sp"-->
-    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--            app:layout_constraintEnd_toEndOf="parent"-->
-    <!--            app:layout_constraintHorizontal_bias="0.428"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            app:layout_constraintTop_toTopOf="parent"-->
-    <!--            app:layout_constraintVertical_bias="0.400" />-->
-
-    <!--        <TextView-->
-    <!--            android:id="@+id/lesson_price"-->
-    <!--            android:layout_width="113dp"-->
-    <!--            android:layout_height="35dp"-->
-    <!--            android:layout_marginStart="16dp"-->
-    <!--            android:layout_marginTop="32dp"-->
-    <!--            android:layout_marginEnd="16dp"-->
-    <!--            android:layout_marginBottom="16dp"-->
-    <!--            android:gravity="center"-->
-    <!--            android:text="@string/text"-->
-    <!--            android:textSize="20sp"-->
-    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--            app:layout_constraintEnd_toEndOf="parent"-->
-    <!--            app:layout_constraintHorizontal_bias="0.924"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            app:layout_constraintTop_toTopOf="parent"-->
-    <!--            app:layout_constraintVertical_bias="0.400" />-->
-
-    <!--        <TextView-->
-    <!--            android:id="@+id/lesson_address"-->
-    <!--            android:layout_width="113dp"-->
-    <!--            android:layout_height="35dp"-->
-    <!--            android:layout_marginStart="16dp"-->
-    <!--            android:layout_marginTop="32dp"-->
-    <!--            android:layout_marginEnd="16dp"-->
-    <!--            android:layout_marginBottom="16dp"-->
-    <!--            android:gravity="center"-->
-    <!--            android:text="@string/text"-->
-    <!--            android:textSize="20sp"-->
-    <!--            app:layout_constraintBottom_toBottomOf="@id/lesson_name"-->
-    <!--            app:layout_constraintEnd_toEndOf="@id/lesson_name"-->
-    <!--            app:layout_constraintHorizontal_bias="0.924"-->
-    <!--            app:layout_constraintStart_toStartOf="@id/lesson_name"-->
-    <!--            app:layout_constraintTop_toTopOf="@id/lesson_name"-->
-    <!--            app:layout_constraintVertical_bias="0.0" />-->
-
-    <!--        <TextView-->
-    <!--            android:id="@+id/lesson_name"-->
-    <!--            android:layout_width="113dp"-->
-    <!--            android:layout_height="35dp"-->
-    <!--            android:layout_marginStart="16dp"-->
-    <!--            android:layout_marginTop="16dp"-->
-    <!--            android:layout_marginEnd="16dp"-->
-    <!--            android:layout_marginBottom="16dp"-->
-    <!--            android:gravity="center"-->
-    <!--            android:text="@string/text"-->
-    <!--            android:textSize="20sp"-->
-    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--            app:layout_constraintEnd_toEndOf="parent"-->
-    <!--            app:layout_constraintHorizontal_bias="0.462"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            app:layout_constraintTop_toTopOf="parent"-->
-    <!--            app:layout_constraintVertical_bias="0.183" />-->
-    <!--    </RelativeLayout>-->
-    <!--</androidx.cardview.widget.CardView>-->
-    <!--</LinearLayout>-->
+        <TextView
+            android:id="@+id/lesson_price"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="130dp"
+            android:gravity="center"
+            android:text="@string/text"
+            app:privateLessonPrice="@{privateLesson}" />
+    </androidx.cardview.widget.CardView>
+</layout>

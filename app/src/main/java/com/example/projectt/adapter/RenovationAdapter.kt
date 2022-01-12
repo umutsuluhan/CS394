@@ -1,21 +1,17 @@
 package com.example.projectt.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.projectt.R
-import com.example.projectt.database.PrivateLesson
 import com.example.projectt.database.Renovation
+import com.example.projectt.databinding.RenovationItemBinding
 
-class RenovationAdapter(val data: MutableList<Renovation>): RecyclerView.Adapter<RenovationAdapter.ViewHolder>() {
-
-    override fun getItemCount() = data.size
-
+class RenovationAdapter(val clickListener: RenovationListener): ListAdapter<Renovation, RenovationAdapter.ViewHolder>(RenovationDiffCallback()) {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = data[position]
-        holder.bind(item)
+        holder.bind(getItem(position)!!, clickListener)
+
     }
 
 
@@ -23,45 +19,39 @@ class RenovationAdapter(val data: MutableList<Renovation>): RecyclerView.Adapter
         return ViewHolder.from(parent)
     }
 
-    fun changeData(renovations: List<Renovation>){
-        data.clear()
-        data.addAll(renovations)
-    }
-
-    class ViewHolder private constructor(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val name: TextView = itemView.findViewById(R.id.renovation_name)
-        val address: TextView = itemView.findViewById(R.id.renovation_address)
-        val price: TextView = itemView.findViewById(R.id.renovation_price)
-        val rating: TextView = itemView.findViewById(R.id.renovation_rating)
-        lateinit var item: Renovation
-
-        fun bind(item: Renovation) {
-            val res = itemView.context.resources
-            this.item = item
-            name.text = item.name
-            address.text = item.address
-            price.text = item.price.toString()
-            rating.text = item.rating.toString()
-            /*avatar.setImageResource(when (item.privateLesson) {
-                0 -> R.drawable.ic_sleep_0
-                1 -> R.drawable.ic_sleep_1
-                2 -> R.drawable.ic_sleep_2
-                3 -> R.drawable.ic_sleep_3
-                4 -> R.drawable.ic_sleep_4
-                5 -> R.drawable.ic_sleep_5
-                else -> R.drawable.ic_sleep_active
-            })*/
+    class ViewHolder private constructor(val binding: RenovationItemBinding) : RecyclerView.ViewHolder(binding.root){
+        fun bind(item: Renovation, clickListener: RenovationListener){
+           binding.renovation = item
+            binding.clickListener = clickListener
+            binding.executePendingBindings()
         }
 
         companion object {
             fun from(parent: ViewGroup): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val view = layoutInflater
-                    .inflate(R.layout.renovation_item, parent, false)
+                val binding = RenovationItemBinding.inflate(layoutInflater, parent, false)
+                return ViewHolder(binding)
 
-                return ViewHolder(view)
             }
         }
     }
 
+}
+
+class RenovationDiffCallback : DiffUtil.ItemCallback<Renovation>() {
+
+    override fun areItemsTheSame(oldItem: Renovation, newItem: Renovation): Boolean {
+        return oldItem.renovation_id == newItem.renovation_id
+    }
+
+
+    override fun areContentsTheSame(oldItem: Renovation, newItem: Renovation): Boolean {
+        return oldItem == newItem
+    }
+
+
+}
+
+class RenovationListener(val clickListener: (renovationId: Int) -> Unit) {
+    fun onClick(renovation: Renovation) = clickListener(renovation.renovation_id)
 }
