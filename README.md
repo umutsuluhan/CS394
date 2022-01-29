@@ -1,10 +1,3 @@
-# CS394
+# ELMA
 
-
-Catering       --> Bora  
-Renovation     --> İrem  
-Private Lesson --> Umut  
-
-Constraint Layout (Recyler view)  
-Data Binding  
-
+Simple Android application that user can hire catering services, private lesson tutors and renovation services.
